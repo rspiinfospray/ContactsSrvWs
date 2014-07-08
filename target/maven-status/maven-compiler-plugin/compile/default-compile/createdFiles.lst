@@ -1,0 +1,6 @@
+org\infospray\service\ContactService.class
+org\infospray\service\ContactServiceImpl.class
+org\infospray\springboot\config\Runner.class
+org\infospray\dao\ContactDao.class
+org\infospray\controller\ContactController.class
+org\infospray\model\Contact.class

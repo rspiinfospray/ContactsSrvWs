@@ -5,6 +5,7 @@ import java.util.List;
 import org.infospray.model.Competence;
 import org.infospray.service.CompetenceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,11 @@ public class CompetenceController {
 	@RequestMapping("/competences")
 	public List<Competence> getListCompetences(){
 		return competenceService.getListCompetences();
+	}
+	
+	@RequestMapping("/competences/{id}")
+	public Competence getCompetenceById(@PathVariable long id){
+		return competenceService.getCompetenceById(id);
 	}
 
 }

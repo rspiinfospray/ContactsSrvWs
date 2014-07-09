@@ -4,7 +4,7 @@ public class Competence {
 	
 	private int id;
 	
-	private String libelle;
+	private String competence;
 
 	public int getId() {
 		return id;
@@ -14,14 +14,11 @@ public class Competence {
 		this.id = id;
 	}
 
-	public String getLibelle() {
-		return libelle;
+	public String getCompetence() {
+		return competence;
 	}
 
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+	public void setCompetence(String competence) {
+		this.competence = competence;
 	}
-	
-	
-
 }

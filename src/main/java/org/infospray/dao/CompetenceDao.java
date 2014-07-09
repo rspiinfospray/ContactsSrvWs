@@ -3,7 +3,7 @@ package org.infospray.dao;
 import java.util.List;
 import java.util.Properties;
 
-import org.infospray.model.Contact;
+import org.infospray.model.Competence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -11,10 +11,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 
-
-
 @Repository
-public class ContactDao {
+public class CompetenceDao {
 
 	  @Autowired
 	   private JdbcTemplate jdbcTemplate;
@@ -24,14 +22,14 @@ public class ContactDao {
 	  private Properties queryProperties;
 	  
 	  
-	  public Contact getContactById(long id){		  
-		return jdbcTemplate.queryForObject(queryProperties.getProperty("SELECT_CONTACT_BY_ID"),
-				new BeanPropertyRowMapper<Contact>(Contact.class), id);
+	  public Competence getCompetenceById(long id){		  
+		return jdbcTemplate.queryForObject(queryProperties.getProperty("SELECT_COMPETENCE_BY_ID"),
+				new BeanPropertyRowMapper<Competence>(Competence.class), id);
 	  }
 	  
-	  public List<Contact> getListContact(){
-		  return jdbcTemplate.query(queryProperties.getProperty("SELECT_CONTACTS"),
-				  new BeanPropertyRowMapper<Contact>(Contact.class));
+	  public List<Competence> getListCompetence(){
+		  return jdbcTemplate.query(queryProperties.getProperty("SELECT_COMPETENCES"),
+				  new BeanPropertyRowMapper<Competence>(Competence.class));
 	  }
 	
 }

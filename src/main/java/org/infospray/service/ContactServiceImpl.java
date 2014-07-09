@@ -1,6 +1,5 @@
 package org.infospray.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.infospray.dao.ContactDao;
@@ -17,24 +16,7 @@ public class ContactServiceImpl implements ContactService {
 	
 	@Override
 	public List<Contact> getListContact() {
-		List<Contact> listContact = new ArrayList<Contact>();
-
-		Contact cont = new Contact();
-		cont.setId(1);
-		cont.setNom("TOTO");
-		cont.setPrenom("blabla");
-
-
-		Contact cont2 = new Contact();
-		cont2.setId(2);
-		cont2.setNom("TIti");
-		cont2.setPrenom("Martin");
-
-		listContact.add(cont);
-		listContact.add(cont2);
-
-
-		return listContact;
+		return contactDao.getListContact();
 	}
 
 	@Override

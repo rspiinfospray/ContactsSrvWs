@@ -7,5 +7,7 @@ import org.infospray.model.Competence;
 public interface CompetenceService {
 	
 	public List<Competence> getListCompetences();
+	
+	public Competence getCompetenceById(long id);
 
 }

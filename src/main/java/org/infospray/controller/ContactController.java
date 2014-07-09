@@ -3,6 +3,7 @@ package org.infospray.controller;
 import java.util.List;
 
 import org.infospray.model.Contact;
+import org.infospray.model.ContactSumUp;
 import org.infospray.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,11 @@ public class ContactController {
 	@RequestMapping("/contacts/{id}")
 	public Contact getListContact(@PathVariable long id){
 		return contactService.getContactById(id);
+	}
+	
+	@RequestMapping("/contacts/sumup/{id}")
+	public ContactSumUp getContactSumup(@PathVariable long id){
+		return contactService.getContactSumUpById(id);
 	}
 
 }

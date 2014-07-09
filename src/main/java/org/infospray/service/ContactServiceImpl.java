@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.infospray.dao.ContactDao;
 import org.infospray.model.Contact;
+import org.infospray.model.ContactSumUp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +21,13 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
-	public Contact getContactById(long id) {
-		
+	public Contact getContactById(long id) {		
 		return contactDao.getContactById(id);
+	}
+
+	@Override
+	public ContactSumUp getContactSumUpById(long id) {
+		return contactDao.getContactSumUpById(id);
 	}
 	
 	

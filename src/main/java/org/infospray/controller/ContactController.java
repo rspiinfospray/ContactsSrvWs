@@ -2,6 +2,7 @@ package org.infospray.controller;
 
 import java.util.List;
 
+import org.infospray.model.Competence;
 import org.infospray.model.Contact;
 import org.infospray.model.ContactSumUp;
 import org.infospray.service.ContactService;
@@ -28,9 +29,19 @@ public class ContactController {
 		return contactService.getContactById(id);
 	}
 	
+	@RequestMapping("/contacts/{id}/competence")
+	public List<Competence> getListContactCompetenceById(@PathVariable long id){
+		return contactService.getListContactCompetenceById(id);
+	}
+	
 	@RequestMapping("/contacts/sumup/{id}")
-	public ContactSumUp getContactSumup(@PathVariable long id){
+	public ContactSumUp getContactSumupById(@PathVariable long id){
 		return contactService.getContactSumUpById(id);
+	}
+	
+	@RequestMapping("/contacts/sumup")
+	public List<ContactSumUp> getListContactSumup(){
+		return contactService.getListContactSumUp();
 	}
 
 }

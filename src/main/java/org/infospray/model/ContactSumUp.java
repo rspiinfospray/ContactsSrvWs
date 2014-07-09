@@ -3,23 +3,23 @@ package org.infospray.model;
 import java.util.Date;
 
 public class ContactSumUp {
-	
+
 	private int id;
-	
+
 	private String nom;
-		
+
 	private String prenom;
-	
+
 	private Date dateNaissance;
-	
+
 	private Date dateDebutTravail;
-	
+
 	private int idMetier;
-	
+
 	private String metier;
-	
+
 	private int idSpecialite;
-	
+
 	private String specialite;
 
 	public int getId() {
@@ -93,6 +93,6 @@ public class ContactSumUp {
 	public void setSpecialite(String specialite) {
 		this.specialite = specialite;
 	}
-	
-	
+
+
 }

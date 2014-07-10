@@ -1,10 +1,10 @@
 package org.infospray.controller;
 
-import java.util.List;
-
 import org.infospray.model.Competence;
 import org.infospray.model.Contact;
 import org.infospray.model.ContactSumUp;
+import org.infospray.rest.BuildRestReponse;
+import org.infospray.rest.Reponse;
 import org.infospray.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,28 +20,28 @@ public class ContactController {
 
 
 	@RequestMapping("/contacts")
-	public List<Contact> getListContact(){
-		return contactService.getListContact();
+	public Reponse<Contact> getListContact(){		
+		return BuildRestReponse.buildList(contactService.getListContact());
 	}
 	
 	@RequestMapping("/contacts/{id}")
-	public Contact getListContact(@PathVariable long id){
-		return contactService.getContactById(id);
+	public Reponse<Contact> getListContact(@PathVariable long id){
+		return BuildRestReponse.build(contactService.getContactById(id));
 	}
 	
 	@RequestMapping("/contacts/{id}/competence")
-	public List<Competence> getListContactCompetenceById(@PathVariable long id){
-		return contactService.getListContactCompetenceById(id);
+	public Reponse<Competence> getListContactCompetenceById(@PathVariable long id){
+		return BuildRestReponse.buildList(contactService.getListContactCompetenceById(id));
 	}
 	
 	@RequestMapping("/contacts/sumup/{id}")
-	public ContactSumUp getContactSumupById(@PathVariable long id){
-		return contactService.getContactSumUpById(id);
+	public Reponse<ContactSumUp> getContactSumupById(@PathVariable long id){
+		return BuildRestReponse.build(contactService.getContactSumUpById(id));
 	}
 	
 	@RequestMapping("/contacts/sumup")
-	public List<ContactSumUp> getListContactSumup(){
-		return contactService.getListContactSumUp();
+	public Reponse<ContactSumUp> getListContactSumup(){
+		return BuildRestReponse.buildList(contactService.getListContactSumUp());
 	}
 
 }

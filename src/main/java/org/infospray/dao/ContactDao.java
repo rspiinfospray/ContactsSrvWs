@@ -47,8 +47,8 @@ public class ContactDao {
 	}
 
 	public List<Competence> getListContactCompetenceById(long id) {
-		return jdbcTemplate.query(queryProperties.getProperty("SELECT_CONTACT_EXPERIENCE"),
-				new BeanPropertyRowMapper<Competence>(Competence.class));
+		return jdbcTemplate.query(queryProperties.getProperty("SELECT_CONTACT_EXPERIENCE_BY_ID"),
+				new BeanPropertyRowMapper<Competence>(Competence.class),id);
 	}
 
 }

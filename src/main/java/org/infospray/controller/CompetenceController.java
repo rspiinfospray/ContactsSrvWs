@@ -1,8 +1,8 @@
 package org.infospray.controller;
 
-import java.util.List;
-
 import org.infospray.model.Competence;
+import org.infospray.rest.BuildRestReponse;
+import org.infospray.rest.Reponse;
 import org.infospray.service.CompetenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,13 +17,13 @@ public class CompetenceController {
 
 
 	@RequestMapping("/competences")
-	public List<Competence> getListCompetences(){
-		return competenceService.getListCompetences();
+	public Reponse<Competence> getListCompetences(){
+		return BuildRestReponse.buildList(competenceService.getListCompetences());
 	}
 	
 	@RequestMapping("/competences/{id}")
-	public Competence getCompetenceById(@PathVariable long id){
-		return competenceService.getCompetenceById(id);
+	public Reponse<Competence> getCompetenceById(@PathVariable long id){
+		return BuildRestReponse.build(competenceService.getCompetenceById(id));
 	}
 
 }

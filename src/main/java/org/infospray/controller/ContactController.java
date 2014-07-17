@@ -2,6 +2,7 @@ package org.infospray.controller;
 
 import org.infospray.model.Competence;
 import org.infospray.model.Contact;
+import org.infospray.model.Mission;
 import org.infospray.model.ContactSumUp;
 import org.infospray.rest.BuildRestReponse;
 import org.infospray.rest.Reponse;
@@ -20,7 +21,7 @@ public class ContactController {
 
 
 	@RequestMapping("/contacts")
-	public Reponse<Contact> getListContact(){		
+	public Reponse<Contact> getListContact(){	
 		return BuildRestReponse.buildList(contactService.getListContact());
 	}
 	
@@ -34,9 +35,14 @@ public class ContactController {
 		return BuildRestReponse.buildList(contactService.getListContactCompetenceById(id));
 	}
 	
-	@RequestMapping("/contacts/sumup/{id}")
+	@RequestMapping("/contacts/{id}/sumup")
 	public Reponse<ContactSumUp> getContactSumupById(@PathVariable long id){
 		return BuildRestReponse.build(contactService.getContactSumUpById(id));
+	}
+	
+	@RequestMapping("/contacts/{id}/mission")
+	public Reponse<Mission> getListContactMissionById(@PathVariable long id){
+		return BuildRestReponse.buildList(contactService.getListContactMissionById(id));
 	}
 	
 	@RequestMapping("/contacts/sumup")

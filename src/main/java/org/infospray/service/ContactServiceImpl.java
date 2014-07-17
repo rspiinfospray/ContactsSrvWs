@@ -6,6 +6,7 @@ import org.infospray.dao.ContactDao;
 import org.infospray.model.Competence;
 import org.infospray.model.Contact;
 import org.infospray.model.ContactSumUp;
+import org.infospray.model.Mission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +49,13 @@ public class ContactServiceImpl implements ContactService {
 	public List<Competence> getListContactCompetenceById(long id) {
 		return contactDao.getListContactCompetenceById(id);
 	}
+
+	@Override
+	public List<Mission> getListContactMissionById(long id) {
+		return contactDao.getListContactMissionById(id);
+	}
+	
+	
 	
 	
 

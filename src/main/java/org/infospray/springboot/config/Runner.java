@@ -19,10 +19,8 @@ public class Runner {
 		SpringApplication.run(Runner.class, args);
 	}
 
-
-
 	@Bean
-	public Properties getQueryProperties(){
+	public Properties queryProperties(){
 
 		Properties queryProperties = null;
 

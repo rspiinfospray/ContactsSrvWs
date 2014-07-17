@@ -1,0 +1,16 @@
+org/infospray/controller/WebController.class
+org/infospray/springboot/config/Runner.class
+org/infospray/rest/BuildRestReponse.class
+org/infospray/model/ContactSumUp.class
+org/infospray/service/ContactServiceImpl.class
+org/infospray/service/ContactService.class
+org/infospray/controller/CompetenceController.class
+org/infospray/rest/Reponse.class
+org/infospray/service/CompetenceServiceImpl.class
+org/infospray/dao/CompetenceDao.class
+org/infospray/service/CompetenceService.class
+org/infospray/model/Competence.class
+org/infospray/dao/ContactDao.class
+org/infospray/controller/ContactController.class
+org/infospray/controller/ExceptionController.class
+org/infospray/model/Contact.class

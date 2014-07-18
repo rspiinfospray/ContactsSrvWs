@@ -20,6 +20,8 @@ public interface ContactService {
 	public List<Competence> getListContactCompetenceById(long id);
 
 	public List<Mission> getListContactMissionById(long id);
+	
+	public byte[] getImageById(long id);
 
 
 }

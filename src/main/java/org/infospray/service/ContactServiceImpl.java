@@ -1,7 +1,13 @@
 package org.infospray.service;
 
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
+import org.apache.commons.io.IOUtils;
 import org.infospray.dao.ContactDao;
 import org.infospray.model.Competence;
 import org.infospray.model.Contact;
@@ -11,11 +17,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
+
 @Service
 public class ContactServiceImpl implements ContactService {
 
 	@Autowired
 	private ContactDao contactDao; 
+	
+	@Autowired
+	ServletContext context;
 	
 	@Override
 	public List<Contact> getListContact() {
@@ -54,9 +65,21 @@ public class ContactServiceImpl implements ContactService {
 	public List<Mission> getListContactMissionById(long id) {
 		return contactDao.getListContactMissionById(id);
 	}
-	
-	
-	
-	
+
+	@Override
+	public byte[] getImageById(long id) {
+
+		 InputStream in = context.getResourceAsStream("/ContactsSrvWs/Photos/imageContact_" + String.valueOf(id)+".jpeg");
+		 byte[] byteTab = null;
+		 try {
+			 byteTab = IOUtils.toByteArray(in);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		 return byteTab;
+	}
 
 }
+	

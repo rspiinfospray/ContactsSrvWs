@@ -13,6 +13,8 @@ import org.infospray.model.Competence;
 import org.infospray.model.Contact;
 import org.infospray.model.ContactSumUp;
 import org.infospray.model.Mission;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,8 @@ public class ContactServiceImpl implements ContactService {
 	
 	@Autowired
 	ServletContext context;
+	
+	private static Logger logger = LoggerFactory.getLogger(ContactServiceImpl.class);
 	
 	@Override
 	public List<Contact> getListContact() {
@@ -69,13 +73,12 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public byte[] getImageById(long id) {
 
-		 InputStream in = context.getResourceAsStream("/ContactsSrvWs/Photos/imageContact_" + String.valueOf(id)+".jpeg");
+		 InputStream in = context.getResourceAsStream("imageContact_" + String.valueOf(id)+".jpeg");
 		 byte[] byteTab = null;
 		 try {
 			 byteTab = IOUtils.toByteArray(in);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
 		}
 
 		 return byteTab;

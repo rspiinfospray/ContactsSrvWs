@@ -73,6 +73,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public byte[] getImageById(long id) {
 
+		logger.info("Recherche de l'image du contact = {}",id);
 		 InputStream in = context.getResourceAsStream("imageContact_" + String.valueOf(id)+".jpeg");
 		 byte[] byteTab = null;
 		 try {

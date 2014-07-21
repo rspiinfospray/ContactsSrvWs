@@ -7,6 +7,8 @@ import org.infospray.model.Client;
 public interface ClientService {
 	
 	public List<Client> getListClients();
+
+	public Client getClientById(long id);
 	
 
 

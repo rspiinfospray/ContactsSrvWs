@@ -1,8 +1,8 @@
 package org.infospray.controller;
 
-import org.infospray.rest.BuildRestReponse;
+import org.infospray.rest.BuildRestResponse;
+import org.infospray.rest.ResponseBody;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,23 +15,17 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
 
 
 	@ExceptionHandler(value = { EmptyResultDataAccessException.class }) 
-	protected ResponseEntity<Object> EmptyResultException(Exception ex, 
+	protected ResponseEntity<ResponseBody<Object>> EmptyResultException(Exception ex, 
 			WebRequest request) { 
-
-		return handleExceptionInternal( 
-				ex, 
-				BuildRestReponse.buildFailed(HttpStatus.NOT_FOUND.value(), "Element non trouvé"),
-				new HttpHeaders(), HttpStatus.OK, request); 
+		ex.printStackTrace(); 
+		return BuildRestResponse.buildFailed(Boolean.FALSE, HttpStatus.NOT_FOUND.value(), "Element non trouvé");
 
 	}
 
 	@ExceptionHandler(value = { Exception.class }) 
-	protected ResponseEntity<Object> genericException(Exception ex, WebRequest request) { 
+	protected ResponseEntity<ResponseBody<Object>> genericException(Exception ex, WebRequest request) { 
 		ex.printStackTrace(); 
-		return handleExceptionInternal( 
-				ex, 
-				BuildRestReponse.buildFailed(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Erreur interne au serveur"),
-				new HttpHeaders(), HttpStatus.OK, request); 
+		return BuildRestResponse.buildFailed(Boolean.TRUE , HttpStatus.INTERNAL_SERVER_ERROR.value(), "Erreur interne au serveur");
 	}
 
 

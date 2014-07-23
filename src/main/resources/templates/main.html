@@ -36,17 +36,22 @@
 		</table>
 	</div>
 	<div class="container">
-		<form class="well form-search">
+		<form  class="well form-search">
 			<input type="text" class="input-medium search-query"/>
 			<button class="btn btn-primary btn-large" type="submit">Recherche</button>
 		</form>
 	</div>
 	<div class="container">
-		<select th:field="*{contacts}" class="input-small">
-  			<option th:each="contact : ${contacts}" 
-          th:value="${contact.id}" 
-          th:text="${contact.nom}">Wireframe</option>
-		</select>
+		<form  class="well form-search">
+			<select th:field="*{contacts}" class="input-small">
+	  			<option th:each="contact : ${contacts}" th:value="${contact.id}" th:text="${contact.nom}">Wireframe</option>
+			</select>
+		</form>
+		<ul th:fragment="contactsumupFragment">
+        	<li th:text="'Nom : '+ ${contactsumup.nom}" />
+        	<li th:text="'Prénom : ' + ${contactsumup.prenom}" />
+        </ul>
+		
 	</div>
 
 

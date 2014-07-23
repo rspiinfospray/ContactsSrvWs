@@ -3,9 +3,9 @@
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/dao/CompetenceDao.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/dao/ClientDao.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/dao/ContactDao.java
-/home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/rest/BuildRestReponse.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/controller/ExceptionController.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/springboot/config/Runner.java
+/home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/rest/BuildRestResponse.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/model/Formation.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/model/Client.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/service/ClientServiceImpl.java
@@ -13,6 +13,7 @@
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/service/CompetenceServiceImpl.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/controller/CompetenceController.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/model/Contact.java
+/home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/rest/ResponseBody.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/service/ClientService.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/model/Competence.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/service/ContactService.java
@@ -20,5 +21,4 @@
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/service/CompetenceService.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/dao/MissionRowMapper.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/model/ContactSumUp.java
-/home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/rest/Reponse.java
 /home/remi/workspace/ContactsSrvWs/src/main/java/org/infospray/model/Mission.java

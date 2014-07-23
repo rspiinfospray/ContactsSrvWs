@@ -25,7 +25,7 @@ public class WebController {
 		
 		
 		model.addAttribute("competences", competenceService.getListCompetences());
-		
+		model.addAttribute("contactsumup", contactService.getContactSumUpById(2));
 		model.addAttribute("contacts", contactService.getListContact());
 		
         return "main";
@@ -36,5 +36,12 @@ public class WebController {
 	public byte[] getImageById(@PathVariable long id){	
 		return contactService.getImageById(id);			
 	}
+	
+	@RequestMapping("/web/contacts/{id}/sumup")
+    public String showContactSumup(@PathVariable long id, Model model) {
+
+		model.addAttribute("contactsumup", contactService.getContactSumUpById(2));
+        return "/web :: contactsumupFragment";
+    }
 
 }

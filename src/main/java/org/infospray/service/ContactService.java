@@ -21,7 +21,7 @@ public interface ContactService {
 
 	public List<Mission> getListContactMissionById(long id);
 	
-	public byte[] getImageById(long id);
+	public byte[] getPhotoById(long id);
 
 
 }

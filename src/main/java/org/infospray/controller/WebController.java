@@ -32,9 +32,9 @@ public class WebController {
     }
 	
 	@ResponseBody
-	@RequestMapping(value="/contacts/{id}/image",method = RequestMethod.GET,produces = MediaType.IMAGE_JPEG_VALUE)	
-	public byte[] getImageById(@PathVariable long id){	
-		return contactService.getImageById(id);			
+	@RequestMapping(value="/contacts/{id}/photo",method = RequestMethod.GET,produces = MediaType.IMAGE_JPEG_VALUE)	
+	public byte[] getPhotoById(@PathVariable long id){	
+		return contactService.getPhotoById(id);			
 	}
 	
 	@RequestMapping("/web/contacts/{id}/sumup")

@@ -4,9 +4,7 @@ package org.infospray.service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
 import javax.servlet.ServletContext;
-
 import org.apache.commons.io.IOUtils;
 import org.infospray.dao.ContactDao;
 import org.infospray.model.Competence;
@@ -29,6 +27,7 @@ public class ContactServiceImpl implements ContactService {
 	
 	@Autowired
 	ServletContext context;
+	
 	
 	private static Logger logger = LoggerFactory.getLogger(ContactServiceImpl.class);
 	
@@ -71,10 +70,11 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
-	public byte[] getImageById(long id) {
+	public byte[] getPhotoById(long id) {
 
-		logger.info("Recherche de l'image du contact = {}",id);
-		 InputStream in = context.getResourceAsStream("imageContact_" + String.valueOf(id)+".jpeg");
+		logger.info("Recherche de la photo du contact = {}",id);
+
+		 InputStream in = getClass().getResourceAsStream("/photos/photoContact_" + String.valueOf(id)+".jpeg");
 		 byte[] byteTab = null;
 		 try {
 			 byteTab = IOUtils.toByteArray(in);
